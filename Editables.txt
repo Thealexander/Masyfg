@@ -1,0 +1,17 @@
+*.docx ------> Ms Office Word 2016
+*.ncx  ------> Navicat Premiun
+*.uml  ------> WhiteStaruML
+*.mdl  ------> IBM Rational Rose 2007
+*.vsdx ------> Ms Office Visio 2016
+*.bpmr ------> Balsamiq Mockups
+*.sql  ------> Navicat Premiun (postgreSQL/MariaDB)
+*.vp   ------> JustinMind prototyper
+*pptx  ------> Ms PowerPoint
+
+Diseñar una herramienta tecnológica de caracter web, para el manejo de información administrativa y de control operativo de los proyectos, así como controles estadísticos presentados en una dinámica de reportaría, que permita a Glasswing la administración efectiva, y oportuna de la información y datos para optimizar controles y estadísticas de los diferentes proyectos.
+
+1)	Realizar un análisis de requerimientos y requisitos para determinar el desarrollo de un Software de un Sistema de información para Glasswing Nicaragua.
+2)	Presentar un informe de Factibilidad y de Viabilidad para una futura decisión por parte de Glasswing, de Desarrollar e Implementar el Sistema completamente.
+3)	Diseñar el sistema y procesos de entrada - salida de datos y de procesos negocios en UML y BPMN con el propósito de brindar una documentación para el desarrollo e implementación en la organización de un sistema de información.
+4)	Elaborar el modelo de las bases de datos relacionales que se acomoden a lo recolectado durante el análisis de requisitos y requerimientos, que permitirá manejar la información centralizada y un control seguro de usuarios. 
+5)	Elaborar y Diseñar los prototipos de la interfaz visual de una herramienta que permita a Glasswing monitorear y evaluar los proyectos ejecutados, además de poder, en base a los requisitos y requerimientos que la gerencia de Glasswing brinde. 

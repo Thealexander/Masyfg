@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bonitaConnector="http://www.bonitasoft.org/studio/connector/definition/6.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di_1="http://www.omg.org/spec/DD/20100524/DI" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:model="http://www.omg.org/spec/BPMN/20100524/MODEL" xsi:schemaLocation="schemaLocation http://www.omg.org/spec/BPMN/20100524/MODEL schemas/BPMN20.xsd" exporter="BonitaSoft" exporterVersion="7.2.2" expressionLanguage="http://groovy.codehaus.org/" targetNamespace="http://bonitasoft.com/_r0yi4KyCEeayr9-N4TKc4Q">
+  <model:collaboration id="_r0yi4KyCEeayr9-N4TKc4Q">
+    <model:participant id="_Y9lPgKyGEeayr9-N4TKc4Q" name="Añadir clubs a proyecto" processRef="_r0yi4ayCEeayr9-N4TKc4Q"/>
+    <model:participant id="_r0yjC6yCEeayr9-N4TKc4Q" name="Employee actor">
+      <model:documentation>Este es un ejemplo de actor que está mapeado a cualquier usuario de la organización ACME</model:documentation>
+    </model:participant>
+  </model:collaboration>
+  <model:process id="_r0yi4ayCEeayr9-N4TKc4Q" name="Añadir clubs a proyecto">
+    <model:ioSpecification id="_Y9lPg6yGEeayr9-N4TKc4Q">
+      <model:inputSet id="_Y9lPhKyGEeayr9-N4TKc4Q"/>
+      <model:outputSet id="_Y9lPhayGEeayr9-N4TKc4Q"/>
+    </model:ioSpecification>
+    <model:laneSet id="Añadir clubs a proyecto_laneSet">
+      <model:lane id="_r0yi4qyCEeayr9-N4TKc4Q" name="Representante de la empresa">
+        <model:flowNodeRef>_KZO8oKyDEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_TEVrkKyDEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_aFokEKyDEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_hHy_QKyDEeayr9-N4TKc4Q</model:flowNodeRef>
+      </model:lane>
+      <model:lane id="_r0yi46yCEeayr9-N4TKc4Q" name="representante de Glasswing">
+        <model:flowNodeRef>_r0yi5KyCEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_r0yi6ayCEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_ksqNIKyDEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_o_GSsKyDEeayr9-N4TKc4Q</model:flowNodeRef>
+      </model:lane>
+    </model:laneSet>
+    <model:callActivity id="_KZO8oKyDEeayr9-N4TKc4Q" name="Verifica Presupuesto">
+      <model:dataInputAssociation id="_Y_O1UKyGEeayr9-N4TKc4Q"/>
+      <model:dataOutputAssociation id="_Y_PcYKyGEeayr9-N4TKc4Q"/>
+    </model:callActivity>
+    <model:task id="_TEVrkKyDEeayr9-N4TKc4Q" name="cotiza gastos de los clubs propuestos"/>
+    <model:task id="_aFokEKyDEeayr9-N4TKc4Q" name="Selecciona Clubs para añadir a proyecto"/>
+    <model:task id="_hHy_QKyDEeayr9-N4TKc4Q" name="Notifica Clubs seleccionados"/>
+    <model:startEvent id="_r0yi5KyCEeayr9-N4TKc4Q" name="añadir clubs en proyecto"/>
+    <model:userTask id="_r0yi6ayCEeayr9-N4TKc4Q" name="Muestras la opciones de clubs disponibles "/>
+    <model:scriptTask id="_ksqNIKyDEeayr9-N4TKc4Q" name="Procesa la informacion de los clubs a ejecutar"/>
+    <model:endEvent id="_o_GSsKyDEeayr9-N4TKc4Q" name="clubs añadidos"/>
+    <model:sequenceFlow id="_r0yjCKyCEeayr9-N4TKc4Q" name="" sourceRef="_r0yi5KyCEeayr9-N4TKc4Q" targetRef="_r0yi6ayCEeayr9-N4TKc4Q"/>
+    <model:sequenceFlow id="_xnTeoKyDEeayr9-N4TKc4Q" name="" sourceRef="_r0yi6ayCEeayr9-N4TKc4Q" targetRef="_KZO8oKyDEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_Y_RRkKyGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_yPVH8KyDEeayr9-N4TKc4Q" name="" sourceRef="_KZO8oKyDEeayr9-N4TKc4Q" targetRef="_TEVrkKyDEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_Y_RRkayGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_zsVRcKyDEeayr9-N4TKc4Q" name="" sourceRef="_KZO8oKyDEeayr9-N4TKc4Q" targetRef="_aFokEKyDEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_Y_RRkqyGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_0S_BwKyDEeayr9-N4TKc4Q" name="" sourceRef="_aFokEKyDEeayr9-N4TKc4Q" targetRef="_hHy_QKyDEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_Y_RRk6yGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_1Viq8KyDEeayr9-N4TKc4Q" name="" sourceRef="_hHy_QKyDEeayr9-N4TKc4Q" targetRef="_ksqNIKyDEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_Y_RRlKyGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_3qMOIKyDEeayr9-N4TKc4Q" name="" sourceRef="_ksqNIKyDEeayr9-N4TKc4Q" targetRef="_o_GSsKyDEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_Y_R4oKyGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+  </model:process>
+  <di:BPMNDiagram name="Creacion de Clubs en proyectos">
+    <di:BPMNPlane id="plane__r0yi4KyCEeayr9-N4TKc4Q" bpmnElement="_r0yi4KyCEeayr9-N4TKc4Q">
+      <di:BPMNShape id="_r0zJ_qyCEeayr9-N4TKc4Q" bpmnElement="_r0yi4ayCEeayr9-N4TKc4Q" isHorizontal="true">
+        <dc:Bounds height="413.0" width="845.0" x="22.0" y="22.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_r0zKAayCEeayr9-N4TKc4Q" bpmnElement="_r0yi4qyCEeayr9-N4TKc4Q" isHorizontal="true">
+        <dc:Bounds height="226.0" width="828.0" x="39.0" y="22.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_KZRY4KyDEeayr9-N4TKc4Q" bpmnElement="_KZO8oKyDEeayr9-N4TKc4Q">
+        <dc:Bounds height="45.0" width="91.0" x="178.0" y="57.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_TEYH0KyDEeayr9-N4TKc4Q" bpmnElement="_TEVrkKyDEeayr9-N4TKc4Q">
+        <dc:Bounds height="46.0" width="91.0" x="242.0" y="142.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_aFrAUKyDEeayr9-N4TKc4Q" bpmnElement="_aFokEKyDEeayr9-N4TKc4Q">
+        <dc:Bounds height="50.0" width="99.0" x="387.0" y="77.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_hH1bgKyDEeayr9-N4TKc4Q" bpmnElement="_hHy_QKyDEeayr9-N4TKc4Q">
+        <dc:Bounds height="46.0" width="90.0" x="513.0" y="156.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_r0zKCayCEeayr9-N4TKc4Q" bpmnElement="_r0yi46yCEeayr9-N4TKc4Q" isHorizontal="true">
+        <dc:Bounds height="188.0" width="828.0" x="39.0" y="247.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_r0zKDKyCEeayr9-N4TKc4Q" bpmnElement="_r0yi5KyCEeayr9-N4TKc4Q">
+        <dc:Bounds height="23.0" width="24.0" x="99.0" y="351.0"/>
+        <di:BPMNLabel id="_Y_QDdKyGEeayr9-N4TKc4Q" labelStyle="_Y9lPgayGEeayr9-N4TKc4Q">
+          <dc:Bounds height="12.0" width="99.0" x="62.0" y="377.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_r0zKEKyCEeayr9-N4TKc4Q" bpmnElement="_r0yi6ayCEeayr9-N4TKc4Q">
+        <dc:Bounds height="53.0" width="105.0" x="171.0" y="308.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_kssCUKyDEeayr9-N4TKc4Q" bpmnElement="_ksqNIKyDEeayr9-N4TKc4Q">
+        <dc:Bounds height="54.0" width="106.0" x="498.0" y="315.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_o_IH4KyDEeayr9-N4TKc4Q" bpmnElement="_o_GSsKyDEeayr9-N4TKc4Q">
+        <dc:Bounds height="23.0" width="23.0" x="712.0" y="299.0"/>
+        <di:BPMNLabel id="_Y_QDd6yGEeayr9-N4TKc4Q" labelStyle="_Y9lPgayGEeayr9-N4TKc4Q">
+          <dc:Bounds height="12.0" width="61.0" x="693.0" y="325.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNEdge id="_r0zKHqyCEeayr9-N4TKc4Q" bpmnElement="_r0yjCKyCEeayr9-N4TKc4Q">
+        <di_1:waypoint x="162.0" y="479.0"/>
+        <di_1:waypoint x="223.0" y="479.0"/>
+        <di_1:waypoint x="223.0" y="464.0"/>
+        <di_1:waypoint x="228.0" y="464.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="1.0" width="1.0" x="152.0" y="351.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_xnVT0KyDEeayr9-N4TKc4Q" bpmnElement="_xnTeoKyDEeayr9-N4TKc4Q">
+        <di_1:waypoint x="281.0" y="411.0"/>
+        <di_1:waypoint x="281.0" y="273.0"/>
+        <di_1:waypoint x="250.0" y="273.0"/>
+        <di_1:waypoint x="250.0" y="136.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="1.0" width="1.0" x="199.0" y="212.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_yPWWEKyDEeayr9-N4TKc4Q" bpmnElement="_yPVH8KyDEeayr9-N4TKc4Q">
+        <di_1:waypoint x="304.0" y="136.0"/>
+        <di_1:waypoint x="304.0" y="163.0"/>
+        <di_1:waypoint x="354.0" y="163.0"/>
+        <di_1:waypoint x="354.0" y="190.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="1.0" width="1.0" x="246.0" y="114.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_zsXGoKyDEeayr9-N4TKc4Q" bpmnElement="_zsVRcKyDEeayr9-N4TKc4Q">
+        <di_1:waypoint x="358.0" y="106.0"/>
+        <di_1:waypoint x="437.0" y="106.0"/>
+        <di_1:waypoint x="437.0" y="127.0"/>
+        <di_1:waypoint x="516.0" y="127.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="1.0" width="1.0" x="335.0" y="87.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_0TA28KyDEeayr9-N4TKc4Q" bpmnElement="_0S_BwKyDEeayr9-N4TKc4Q">
+        <di_1:waypoint x="648.0" y="136.0"/>
+        <di_1:waypoint x="716.0" y="136.0"/>
+        <di_1:waypoint x="716.0" y="209.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="1.0" width="1.0" x="544.0" y="104.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_1Vj5EKyDEeayr9-N4TKc4Q" bpmnElement="_1Viq8KyDEeayr9-N4TKc4Q">
+        <di_1:waypoint x="799.0" y="269.0"/>
+        <di_1:waypoint x="799.0" y="345.0"/>
+        <di_1:waypoint x="777.0" y="345.0"/>
+        <di_1:waypoint x="777.0" y="421.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="1.0" width="0.0" x="591.0" y="266.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_3qODUKyDEeayr9-N4TKc4Q" bpmnElement="_3qMOIKyDEeayr9-N4TKc4Q">
+        <di_1:waypoint x="805.0" y="450.0"/>
+        <di_1:waypoint x="877.0" y="450.0"/>
+        <di_1:waypoint x="877.0" y="417.0"/>
+        <di_1:waypoint x="950.0" y="417.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="1.0" width="1.0" x="650.0" y="324.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+    </di:BPMNPlane>
+    <di:BPMNLabelStyle id="_Y9lPgayGEeayr9-N4TKc4Q">
+      <dc:Font isBold="false" isItalic="false" isStrikeThrough="false" isUnderline="false" name="Segoe UI" size="9.0"/>
+    </di:BPMNLabelStyle>
+  </di:BPMNDiagram>
+</model:definitions>
