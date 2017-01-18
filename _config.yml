@@ -1,0 +1,8 @@
+title: Masyfg
+description: Sistema De Gestion para Glasswing Nicaragua- Masyfg
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-architect
+
+gems:
+  - jekyll-mentions
