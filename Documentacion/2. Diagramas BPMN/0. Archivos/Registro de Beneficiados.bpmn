@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bonitaConnector="http://www.bonitasoft.org/studio/connector/definition/6.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di_1="http://www.omg.org/spec/DD/20100524/DI" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:model="http://www.omg.org/spec/BPMN/20100524/MODEL" xsi:schemaLocation="schemaLocation http://www.omg.org/spec/BPMN/20100524/MODEL schemas/BPMN20.xsd" exporter="BonitaSoft" exporterVersion="7.2.2" expressionLanguage="http://groovy.codehaus.org/" targetNamespace="http://bonitasoft.com/_qxk-8KxtEeagdtMWQddFPQ">
+  <model:collaboration id="_qxk-8KxtEeagdtMWQddFPQ">
+    <model:participant id="_oDBkoKyGEeayr9-N4TKc4Q" name="Agregar Beneficiado" processRef="_qxk-8axtEeagdtMWQddFPQ"/>
+    <model:participant id="_qxlmH6xtEeagdtMWQddFPQ" name="Employee actor">
+      <model:documentation>Este es un ejemplo de actor que está mapeado a cualquier usuario de la organización ACME</model:documentation>
+    </model:participant>
+  </model:collaboration>
+  <model:process id="_qxk-8axtEeagdtMWQddFPQ" name="Agregar Beneficiado">
+    <model:ioSpecification id="_oDBko6yGEeayr9-N4TKc4Q">
+      <model:inputSet id="_oDBkpKyGEeayr9-N4TKc4Q"/>
+      <model:outputSet id="_oDBkpayGEeayr9-N4TKc4Q"/>
+    </model:ioSpecification>
+    <model:laneSet id="Agregar Beneficiado_laneSet">
+      <model:lane id="_qxk-8qxtEeagdtMWQddFPQ" name="Beneficiado">
+        <model:flowNodeRef>_qxk-86xtEeagdtMWQddFPQ</model:flowNodeRef>
+        <model:flowNodeRef>_LyMbAKyAEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_SEVugKyAEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_YnQo8KyAEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_mfAb4KyAEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_o7MxgKyAEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_EuZysKyBEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_J8CVMKyBEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_hzTsUKyBEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_n49b8KyBEeayr9-N4TKc4Q</model:flowNodeRef>
+      </model:lane>
+      <model:lane id="_fJ7WoKx-Eeayr9-N4TKc4Q" name="Coordinador">
+        <model:flowNodeRef>_axVT0KyAEeayr9-N4TKc4Q</model:flowNodeRef>
+        <model:flowNodeRef>_zATZQKyAEeayr9-N4TKc4Q</model:flowNodeRef>
+      </model:lane>
+    </model:laneSet>
+    <model:startEvent id="_qxk-86xtEeagdtMWQddFPQ" name="quiere incribirse a un club"/>
+    <model:userTask id="_LyMbAKyAEeayr9-N4TKc4Q" name="revisa requerimientos de inscripcion"/>
+    <model:task id="_SEVugKyAEeayr9-N4TKc4Q" name="selecciona club"/>
+    <model:task id="_YnQo8KyAEeayr9-N4TKc4Q" name="solicita inscripcion  en club"/>
+    <model:task id="_mfAb4KyAEeayr9-N4TKc4Q" name="es descartado"/>
+    <model:task id="_o7MxgKyAEeayr9-N4TKc4Q" name="es aceptado"/>
+    <model:endEvent id="_EuZysKyBEeayr9-N4TKc4Q" name="Inscipcion aprobada"/>
+    <model:endEvent id="_J8CVMKyBEeayr9-N4TKc4Q" name="perdida de interes"/>
+    <model:callActivity id="_hzTsUKyBEeayr9-N4TKc4Q" name="Revisa lista de club disponibles">
+      <model:dataInputAssociation id="_oEAcEKyGEeayr9-N4TKc4Q"/>
+      <model:dataOutputAssociation id="_oEAcEayGEeayr9-N4TKc4Q"/>
+    </model:callActivity>
+    <model:task id="_n49b8KyBEeayr9-N4TKc4Q" name="Se canso de intentar"/>
+    <model:task id="_axVT0KyAEeayr9-N4TKc4Q" name="evalua condicion del beneficiado"/>
+    <model:exclusiveGateway id="_zATZQKyAEeayr9-N4TKc4Q" name="lo aceptas?"/>
+    <model:sequenceFlow id="_9jwJ4KyAEeayr9-N4TKc4Q" name="" sourceRef="_SEVugKyAEeayr9-N4TKc4Q" targetRef="_YnQo8KyAEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_oEC4U6yGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="__Tr2cKyAEeayr9-N4TKc4Q" name="" sourceRef="_YnQo8KyAEeayr9-N4TKc4Q" targetRef="_axVT0KyAEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_oEDfYKyGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_AIhzwKyBEeayr9-N4TKc4Q" name="" sourceRef="_axVT0KyAEeayr9-N4TKc4Q" targetRef="_zATZQKyAEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_oEDfYayGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_AlSBMKyBEeayr9-N4TKc4Q" name="no" sourceRef="_zATZQKyAEeayr9-N4TKc4Q" targetRef="_mfAb4KyAEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_oEDfYqyGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_BHUXQKyBEeayr9-N4TKc4Q" name="si" sourceRef="_zATZQKyAEeayr9-N4TKc4Q" targetRef="_o7MxgKyAEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_oEDfY6yGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_qv-sYKyBEeayr9-N4TKc4Q" name="" sourceRef="_hzTsUKyBEeayr9-N4TKc4Q" targetRef="_n49b8KyBEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_oEEGcKyGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_2c_tIKyBEeayr9-N4TKc4Q" name="" sourceRef="_qxk-86xtEeagdtMWQddFPQ" targetRef="_hzTsUKyBEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_oEEGcayGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_-n_YoKyBEeayr9-N4TKc4Q" name="" sourceRef="_o7MxgKyAEeayr9-N4TKc4Q" targetRef="_EuZysKyBEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_oEEtgKyGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_Azp-8KyCEeayr9-N4TKc4Q" name="" sourceRef="_mfAb4KyAEeayr9-N4TKc4Q" targetRef="_n49b8KyBEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_oEEtgayGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_z-9dEKyEEeayr9-N4TKc4Q" name="" sourceRef="_n49b8KyBEeayr9-N4TKc4Q" targetRef="_J8CVMKyBEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_oEEtgqyGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_1qXO8KyEEeayr9-N4TKc4Q" name="" sourceRef="_hzTsUKyBEeayr9-N4TKc4Q" targetRef="_LyMbAKyAEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_oEFUkKyGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+    <model:sequenceFlow id="_28EHYKyEEeayr9-N4TKc4Q" name="" sourceRef="_LyMbAKyAEeayr9-N4TKc4Q" targetRef="_SEVugKyAEeayr9-N4TKc4Q">
+      <model:conditionExpression xsi:type="model:tFormalExpression" id="_oEFUkayGEeayr9-N4TKc4Q" evaluatesToTypeRef="java:java.lang.Boolean" language="http://www.w3.org/1999/XPath"></model:conditionExpression>
+    </model:sequenceFlow>
+  </model:process>
+  <di:BPMNDiagram name="Registro de Beneficiados">
+    <di:BPMNPlane id="plane__qxk-8KxtEeagdtMWQddFPQ" bpmnElement="_qxk-8KxtEeagdtMWQddFPQ">
+      <di:BPMNShape id="_qxmNKqxtEeagdtMWQddFPQ" bpmnElement="_qxk-8axtEeagdtMWQddFPQ" isHorizontal="true">
+        <dc:Bounds height="714.0" width="1126.0" x="30.0" y="30.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_qxmNLaxtEeagdtMWQddFPQ" bpmnElement="_qxk-8qxtEeagdtMWQddFPQ" isHorizontal="true">
+        <dc:Bounds height="464.0" width="1104.0" x="52.0" y="30.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_qxmNM6xtEeagdtMWQddFPQ" bpmnElement="_qxk-86xtEeagdtMWQddFPQ">
+        <dc:Bounds height="30.0" width="30.0" x="152.0" y="114.0"/>
+        <di:BPMNLabel id="_oDCLsayGEeayr9-N4TKc4Q" labelStyle="_oDBkoayGEeayr9-N4TKc4Q">
+          <dc:Bounds height="15.0" width="137.0" x="99.0" y="149.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_LyR6kKyAEeayr9-N4TKc4Q" bpmnElement="_LyMbAKyAEeayr9-N4TKc4Q">
+        <dc:Bounds height="72.0" width="145.0" x="456.0" y="103.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_SEYx0KyAEeayr9-N4TKc4Q" bpmnElement="_SEVugKyAEeayr9-N4TKc4Q">
+        <dc:Bounds height="50.0" width="100.0" x="684.0" y="114.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_YnTsQKyAEeayr9-N4TKc4Q" bpmnElement="_YnQo8KyAEeayr9-N4TKc4Q">
+        <dc:Bounds height="60.0" width="120.0" x="762.0" y="228.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_mfC4IKyAEeayr9-N4TKc4Q" bpmnElement="_mfAb4KyAEeayr9-N4TKc4Q">
+        <dc:Bounds height="50.0" width="100.0" x="764.0" y="379.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_o7PNwKyAEeayr9-N4TKc4Q" bpmnElement="_o7MxgKyAEeayr9-N4TKc4Q">
+        <dc:Bounds height="50.0" width="100.0" x="893.0" y="379.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_EucO8KyBEeayr9-N4TKc4Q" bpmnElement="_EuZysKyBEeayr9-N4TKc4Q">
+        <dc:Bounds height="30.0" width="30.0" x="950.0" y="145.0"/>
+        <di:BPMNLabel id="_oDCywKyGEeayr9-N4TKc4Q" labelStyle="_oDBkoayGEeayr9-N4TKc4Q">
+          <dc:Bounds height="15.0" width="108.0" x="911.0" y="180.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_J8ExcKyBEeayr9-N4TKc4Q" bpmnElement="_J8CVMKyBEeayr9-N4TKc4Q">
+        <dc:Bounds height="30.0" width="30.0" x="513.0" y="228.0"/>
+        <di:BPMNLabel id="_oDCywayGEeayr9-N4TKc4Q" labelStyle="_oDBkoayGEeayr9-N4TKc4Q">
+          <dc:Bounds height="15.0" width="95.0" x="481.0" y="263.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNShape id="_hzYk0KyBEeayr9-N4TKc4Q" bpmnElement="_hzTsUKyBEeayr9-N4TKc4Q">
+        <dc:Bounds height="71.0" width="143.0" x="266.0" y="103.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_n4_4MKyBEeayr9-N4TKc4Q" bpmnElement="_n49b8KyBEeayr9-N4TKc4Q">
+        <dc:Bounds height="60.0" width="120.0" x="319.0" y="209.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_fKCrYKx-Eeayr9-N4TKc4Q" bpmnElement="_fJ7WoKx-Eeayr9-N4TKc4Q" isHorizontal="true">
+        <dc:Bounds height="250.0" width="1104.0" x="52.0" y="494.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_axYXIKyAEeayr9-N4TKc4Q" bpmnElement="_axVT0KyAEeayr9-N4TKc4Q">
+        <dc:Bounds height="60.0" width="120.0" x="437.0" y="578.0"/>
+      </di:BPMNShape>
+      <di:BPMNShape id="_zAV1gKyAEeayr9-N4TKc4Q" bpmnElement="_zATZQKyAEeayr9-N4TKc4Q">
+        <dc:Bounds height="43.0" width="43.0" x="693.0" y="569.0"/>
+        <di:BPMNLabel id="_oEC4UqyGEeayr9-N4TKc4Q" labelStyle="_oDBkoayGEeayr9-N4TKc4Q">
+          <dc:Bounds height="15.0" width="59.0" x="685.0" y="617.0"/>
+        </di:BPMNLabel>
+      </di:BPMNShape>
+      <di:BPMNEdge id="_9jxYAKyAEeayr9-N4TKc4Q" bpmnElement="_9jwJ4KyAEeayr9-N4TKc4Q">
+        <di_1:waypoint x="784.0" y="140.0"/>
+        <di_1:waypoint x="831.0" y="140.0"/>
+        <di_1:waypoint x="831.0" y="228.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="841.0" y="161.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="__TtroKyAEeayr9-N4TKc4Q" bpmnElement="__Tr2cKyAEeayr9-N4TKc4Q">
+        <di_1:waypoint x="762.0" y="288.0"/>
+        <di_1:waypoint x="762.0" y="342.0"/>
+        <di_1:waypoint x="529.0" y="342.0"/>
+        <di_1:waypoint x="529.0" y="578.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="554.0" y="352.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_AIjo8KyBEeayr9-N4TKc4Q" bpmnElement="_AIhzwKyBEeayr9-N4TKc4Q">
+        <di_1:waypoint x="557.0" y="604.0"/>
+        <di_1:waypoint x="626.0" y="604.0"/>
+        <di_1:waypoint x="626.0" y="592.0"/>
+        <di_1:waypoint x="695.0" y="592.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="616.0" y="598.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_AlT2YKyBEeayr9-N4TKc4Q" bpmnElement="_AlSBMKyBEeayr9-N4TKc4Q">
+        <di_1:waypoint x="721.0" y="576.0"/>
+        <di_1:waypoint x="721.0" y="502.0"/>
+        <di_1:waypoint x="800.0" y="502.0"/>
+        <di_1:waypoint x="800.0" y="429.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="15.0" width="15.0" x="753.0" y="485.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_BHsKsKyBEeayr9-N4TKc4Q" bpmnElement="_BHUXQKyBEeayr9-N4TKc4Q">
+        <di_1:waypoint x="726.0" y="580.0"/>
+        <di_1:waypoint x="912.0" y="580.0"/>
+        <di_1:waypoint x="912.0" y="429.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="15.0" width="8.0" x="891.0" y="563.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_qwAhkKyBEeayr9-N4TKc4Q" bpmnElement="_qv-sYKyBEeayr9-N4TKc4Q">
+        <di_1:waypoint x="337.0" y="174.0"/>
+        <di_1:waypoint x="337.0" y="209.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="347.0" y="192.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_2dCJYKyBEeayr9-N4TKc4Q" bpmnElement="_2c_tIKyBEeayr9-N4TKc4Q">
+        <di_1:waypoint x="181.0" y="128.0"/>
+        <di_1:waypoint x="266.0" y="128.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="224.0" y="118.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_-oAmwKyBEeayr9-N4TKc4Q" bpmnElement="_-n_YoKyBEeayr9-N4TKc4Q">
+        <di_1:waypoint x="989.0" y="379.0"/>
+        <di_1:waypoint x="989.0" y="276.0"/>
+        <di_1:waypoint x="966.0" y="276.0"/>
+        <di_1:waypoint x="966.0" y="174.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="978.0" y="286.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_Azr0IKyCEeayr9-N4TKc4Q" bpmnElement="_Azp-8KyCEeayr9-N4TKc4Q">
+        <di_1:waypoint x="780.0" y="379.0"/>
+        <di_1:waypoint x="780.0" y="324.0"/>
+        <di_1:waypoint x="428.0" y="324.0"/>
+        <di_1:waypoint x="428.0" y="269.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="604.0" y="334.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_z--rMKyEEeayr9-N4TKc4Q" bpmnElement="_z-9dEKyEEeayr9-N4TKc4Q">
+        <di_1:waypoint x="439.0" y="243.0"/>
+        <di_1:waypoint x="513.0" y="243.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="476.0" y="233.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_1qYdEKyEEeayr9-N4TKc4Q" bpmnElement="_1qXO8KyEEeayr9-N4TKc4Q">
+        <di_1:waypoint x="409.0" y="143.0"/>
+        <di_1:waypoint x="456.0" y="143.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="432.0" y="133.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+      <di:BPMNEdge id="_28FVgKyEEeayr9-N4TKc4Q" bpmnElement="_28EHYKyEEeayr9-N4TKc4Q">
+        <di_1:waypoint x="601.0" y="142.0"/>
+        <di_1:waypoint x="684.0" y="142.0"/>
+        <di:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="643.0" y="132.0"/>
+        </di:BPMNLabel>
+      </di:BPMNEdge>
+    </di:BPMNPlane>
+    <di:BPMNLabelStyle id="_oDBkoayGEeayr9-N4TKc4Q">
+      <dc:Font isBold="false" isItalic="false" isStrikeThrough="false" isUnderline="false" name="Segoe UI" size="9.0"/>
+    </di:BPMNLabelStyle>
+  </di:BPMNDiagram>
+</model:definitions>
